@@ -1,11 +1,21 @@
 const data = require('./BengaliDictionary.json');
 const slot = 16920;
 const p = 652339;
+const modP = 652447;
 //const p2 = 652343;
 var primaryHashArray;
 var secondaryHashArray;
 var a = 1+Math.floor(Math.random()*(p-1));
 var b = Math.floor(Math.random()*(p-1));
+
+const wordToNum = async (word) => {  //function to convert a word to a corresponding integer
+    var wordLen = word.length;
+    var intWord = 0;
+    for(var i=0; i<wordLen; i++){
+        intWord = (intWord*257 + word.charCodeAt(i)) % modP;
+    }
+    return intWord;
+}
 
 const primaryHash = async () => {
     var len = data.length;
