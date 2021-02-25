@@ -1,0 +1,29 @@
+.parentContainer{
+    position: relative !important;
+    min-height: 100vh;
+}
+
+.headerText{
+    font-size: 2em;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.searchBarDiv{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchBar{
+    width: 60% !important;
+}
+
+.btn-custom {
+    background-color: #ffa500 !important;
+    color: black !important;
+}
+.btn-custom:hover {
+    background-color: #e59010 !important;
+    color: white !important;
+}
