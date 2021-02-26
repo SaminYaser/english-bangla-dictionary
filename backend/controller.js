@@ -1,6 +1,6 @@
-const data = require('./BengaliDictionary.json');
-const slot = 16920n;
-const intSlot = 16920;
+const data = require('./E2Bdatabase.json');
+const slot = 100000n;
+const intSlot = 100000;
 const p = 999999999959n;
 const p2 = 999999999959;
 var primaryHashArray;
@@ -34,8 +34,7 @@ const primaryHash = async () => {
         var k = wordToNum(word);
         var hash = (((a*k)+b)%p)%slot;
         if(primaryHashArray[hash] == undefined){
-            primaryHashArray[hash] = new Array();
-            primaryHashArray[hash].push(uniqueData[i]);
+            primaryHashArray[hash] = [uniqueData[i]];
         }
         else{
             primaryHashArray[hash].push(uniqueData[i]);  //chaining
@@ -88,8 +87,8 @@ const wordQuery = async req =>{
     }
     var len = secondaryHashArray[hash].length;
     if(len<2){
-        if(secondaryHashArray[hash].en==word){
-            return secondaryHashArray[hash].bn;
+        if(secondaryHashArray[hash][0].en==word){
+            return secondaryHashArray[hash][0].bn;
         }
         else{
             return "Word Not found";
