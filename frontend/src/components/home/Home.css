@@ -39,3 +39,19 @@
 .resultDiv > div{
     margin-top: 30px;
 }
+
+@media screen and (max-width: 768px){
+    .parentContainer{
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    .headerText{
+        font-size: 1.5em;
+    }
+    .searchBar{
+        width: 80% !important;
+    }
+    .resultDiv{
+        font-size: 1em;
+    }
+}
