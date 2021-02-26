@@ -13,7 +13,7 @@ function serverQuery(searchText, setResultText){
     })
     .catch((error) => {
         console.error(error);
-        console.log('failed to load results');
+        console.log('failed to load result');
     });
 }
 
@@ -48,7 +48,7 @@ function Home() {
             </div>
             <div className="resultDiv">
                 {resultText &&
-                    <text>Bangla Meaning:</text>
+                    <div>Bangla Meaning:</div>
                 }
                 <div>
                     {resultText}

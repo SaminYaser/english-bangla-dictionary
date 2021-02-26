@@ -1,16 +1,14 @@
 const express = require("express");
 const app = express();
+const routes = require("./routes");
 const controller = require("./controller")
+var cors = require('cors')
 
-app.get('/', (req, res) => {
-    res.send("Bravo it worked!");
-});
+app.use(cors())
+app.use(routes)
 
-app.listen(3001,async ()=>{
-
-    await controller.storeData();
+app.listen(5000,async ()=>{
     await controller.primaryHash();
-    await controller.secondaryHash()
-
+    await controller.secondaryHash();
     console.log("Server Started");
 });
