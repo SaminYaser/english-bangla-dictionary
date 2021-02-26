@@ -80,6 +80,7 @@ const secondaryHash = async () => {
 
 const wordQuery = async req =>{
     var word = req.query.word;
+    word = word.toLowerCase();
     var k = wordToNum(word);
     var hash = ((a*k+b)%p)%slot;
     if(secondaryHashArray[hash] == undefined){
