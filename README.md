@@ -7,16 +7,17 @@ The backend is developed with Node.js and the frontend is developed with React.j
 # Setup
 
 To run this project, you need to have Node.js installed on your machine.
-Download it from here: ([Download | Node.js](https://nodejs.org/en/download/))
+Download it from <a href="https://nodejs.org/en/download/" target="_blank">here</a>.
+
 
 ## Running the backend
 
-Open the backend folder in [Visual Studio Code](https://code.visualstudio.com/download) and run the following commands on the terminal:
+Open the backend folder in <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a>. and run the following commands on the terminal:
 1.  `npm install`
 2.  `npm start`
 
 ## Running the frontend
 
-In the same way, open the frontend folder in [Visual Studio Code](https://code.visualstudio.com/download) and run the following commands on the terminal:
+In the same way, open the frontend folder in <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a> and run the following commands on the terminal:
 1.  `npm install`
 2.  `npm start`
