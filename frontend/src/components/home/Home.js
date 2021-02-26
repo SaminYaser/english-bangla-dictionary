@@ -2,16 +2,32 @@ import React, { useState } from 'react';
 import './Home.css'
 import { Form, FormControl, Button, Container } from 'react-bootstrap';
 import { CgSearch } from 'react-icons/cg';
+import Axios from 'axios';
+import { serverUrl } from '../../util';
+
+function serverQuery(searchText, setResultText){
+    Axios
+    .get(`${serverUrl}/dictionary?word=${searchText}`)
+    .then(({data: res}) => {
+        setResultText(res);
+    })
+    .catch((error) => {
+        console.error(error);
+        console.log('failed to load results');
+    });
+}
 
 function Home() {
     const [searchText, setSearchText] = useState();
+    const [resultText, setResultText] = useState();
 
     function parseSearchText(e){
-        setSearchText(categoryParse(e.target.value));
+        setSearchText(e.target.value);
     }
 
     function handleSubmit(e) {
         e.preventDefault();
+        serverQuery(searchText, setResultText);
     }
 
     return (
@@ -31,7 +47,12 @@ function Home() {
                 </Form>
             </div>
             <div className="resultDiv">
-                
+                {resultText &&
+                    <text>Bangla Meaning:</text>
+                }
+                <div>
+                    {resultText}
+                </div>
             </div>
         </Container>
     );

@@ -27,3 +27,16 @@
     background-color: #e59010 !important;
     color: white !important;
 }
+
+.resultDiv{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.resultDiv > div{
+    margin-top: 30px;
+}
