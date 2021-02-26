@@ -7,7 +7,7 @@ var cors = require('cors')
 app.use(cors())
 app.use(routes)
 
-app.listen(5000,async ()=>{
+app.listen(5000, "0.0.0.0", async ()=>{
     await controller.primaryHash();
     await controller.secondaryHash();
     console.log("Server Started");
