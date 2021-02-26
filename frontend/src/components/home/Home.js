@@ -5,7 +5,7 @@ import { CgSearch } from 'react-icons/cg';
 import Axios from 'axios';
 import { serverUrl } from '../../util';
 
-function serverQuery(searchText, setResultText){
+function serverQuery(searchText, setResultText){  //function to transfer data to backend
     Axios
     .get(`${serverUrl}/dictionary?word=${searchText}`)
     .then(({data: res}) => {
@@ -47,7 +47,7 @@ function Home() {
                 </Form>
             </div>
             <div className="resultDiv">
-                {resultText &&
+                {resultText &&  //only renders when the resultText is not null
                     <div>Bangla Meaning:</div>
                 }
                 <div>
