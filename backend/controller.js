@@ -13,7 +13,7 @@ function wordToNum(word){  //function to convert a word to a corresponding integ
     var wordLen = word.length;
     var intWord = 0n;
     for(var i=0; i<wordLen; i++){
-        intWord += (intWord*257n + BigInt(word.charCodeAt(i)+1)) % p;
+        intWord = (intWord*257n + BigInt(word.charCodeAt(i)+1)) % p;
     }
     return intWord;
 }
